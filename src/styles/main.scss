@@ -1,0 +1,11 @@
+@import 'font';
+@import 'var';
+$font: "Unbounded", sans-serif;
+
+
+
+  h1{
+  font-family: $font;
+  font-weight: 300;
+  color: $dark;
+}
