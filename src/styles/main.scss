@@ -5,6 +5,7 @@ $font: "Unbounded", sans-serif;
 body{
   font-family: $font;
   font-weight: 400;
+  background-color: #1F2023;
 }
 a{
   text-decoration: none;
@@ -27,17 +28,7 @@ a{
     z-index: -1;
     background-color: $accent;
   }
-  &::after{
-    content: '';
-    display: block;
-    width: 100%;
-    height: 24px;
-    background-image: url(../images/header-bottom.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    position: absolute;
-    bottom: -24px;
-  }
+
   &__logo{
     background-color: $accent;
     padding: 17px 45px 0 45px;
@@ -53,7 +44,18 @@ a{
       right: -68px;
       top: 0;
     }
-  }
+      &::before{
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-image: url(../images/header-bottom-left.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      left: 0;
+      bottom: -24px;}
+      }
   &__link{
     color: $light;
     background-color: $accent;
@@ -71,5 +73,106 @@ a{
       top: 0;
       left: -68px;
     }
+      &::before{
+      content: '';
+      display: block;
+      width: 24px;
+      height: 24px;
+      background-image: url(../images/header-bottom-right.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      right: 0;
+      bottom: -24px;
+    }
   }
 }
+.container{
+  width: 100%;
+  max-width: 1830px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.banner{
+  display: flex;
+  background-image: url(../images/bg-banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50px;
+  margin-top: 40px;
+  &__title{
+    font-size: 64px;
+    width: 100%;
+    max-width: 1031px;
+    height: 140px;
+    font-weight: 700;
+    color: $light;
+    font-family: $font;
+
+  }
+  &__main{
+      margin-left: 50px;
+    }
+}
+.banner-box{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  border: 1px solid $light;
+  border-radius: 20px;
+  padding: 30px;
+  width: 1031px;
+  height: 236px;
+  &__title{
+    font-size: 24px;
+    width: 100%;
+    max-width: 276px;
+    line-height: 110%;
+    font-weight: 400;
+    padding-bottom: 30px;
+    font-family: $font;
+    color: $light;
+  }
+  &__text{
+  line-height: 150%;
+  font-weight: 400;
+  font-size: 20px;
+  color: $light;
+  width: 100%;
+  max-width: 669px;
+  }
+  &__img{
+  width: 100%;
+  max-width: 336px;
+  height: 274px;
+  position: absolute;
+  &._electroguitar{
+  top: -22%;
+  right: -4%;
+  }
+}
+}
+.banner__btn{
+  display: block;
+  width: 100%;
+  max-width: 1031px;
+  height: 130px;
+  margin-top: 135px;
+  border-radius: 20px;
+  background-color: $accent;
+  font-family: $font;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 110%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $light;
+  border: 1px solid $accent;
+  $tr: .3s;
+
+  &:hover{
+    background-color: transparent;
+  }
+}
+
