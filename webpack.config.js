@@ -6,6 +6,9 @@ const devServer = (isdev) => !isdev ? {} : {
         open: true,
         hot: true,
         port: 8080,
+        client: {
+            overlay: false   // ← вот здесь добавляем настройку
+        }
     }
 };
 
@@ -55,4 +58,7 @@ module.exports = ({develop})=>({
     ]
   },
  ...devServer(develop),
+ infrastructureLogging: {
+  level: 'error'
+}
 });
