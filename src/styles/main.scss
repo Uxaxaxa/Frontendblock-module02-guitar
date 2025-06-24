@@ -145,14 +145,106 @@ a{
       }
     }
   }
+  &__item{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 151px;
+    border: 1px solid $light;
+    border-radius: 20px 0 0 20px;
+    border-right: none;
+    margin-right: 80px;
+    position: relative;
+    margin-bottom: 19px;
+    &::after{
+      display: block;
+      content: '';
+      background-image: url(../images/banner-info-decor.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 0;
+      right: -80px;
+      width: 80px;
+      height: 151px;
+    }
+  &._accent{
+    display: flex;
+    justify-content: end;
+    content: '';
+    position: relative;
+    background-color: $accent;
+    align-self: flex-end;
+    &::after{
+        content: '';
+        background-image: url(../images/banner-info-decor-accent.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 0;
+        right: -80px;
+        width: 80px;
+        height: 151px;
+    &._offline{
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: relative;
+      top: 20px;
+      right: -80px;
+      border: 1px solid $light;
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+        }
+      }
+    }
+  }
+  &__decor{
+    display: block;
+    content: '';
+    position: relative;
+    &._calendar{
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: -150px;
+      right: -80px;
+      border: 1px solid $light;
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+    }
+    
+    &._age{
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: -150px;
+      right: -80px;
+      border: 1px solid $light;
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+    }
+    &._payment{
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: -150px;
+      right: -80px;
+      border: 1px solid $light;
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+    }
+
+  }
 }
 .banner-box{
   position: relative;
   border: 1px solid $light;
   border-radius: 20px;
   padding: 30px 332px 30px 30px;
-  width: 100%;
-  max-width: 1031px;
   &__title{
     font-size: 24px;
     line-height: 110%;
