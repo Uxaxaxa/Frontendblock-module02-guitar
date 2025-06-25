@@ -20,6 +20,7 @@ a{
   width: 100%;
   position: fixed;
   top: 0;
+  z-index: 999;
   &::before{
     content: '';
     display: block;
@@ -156,7 +157,25 @@ a{
     margin-right: 80px;
     position: relative;
     margin-bottom: 19px;
-    &::after{
+    box-sizing: border-box;
+    transition: $tr;
+    overflow: visible;
+
+    &:hover{
+      background-color: $accent;
+      border-color: $accent;
+
+      &::after{
+        opacity: 1;
+      }
+
+      .banner__decor{
+        background-color: $accent;
+        border-color: $accent;
+      }
+    }
+
+    &::before{
       display: block;
       content: '';
       background-image: url(../images/banner-info-decor.svg);
@@ -166,12 +185,44 @@ a{
       top: 0;
       right: -80px;
       width: 80px;
-      height: 151px;}
+      height: 151px;
+    }
+
+    &::after{
+      display: block;
+      content: '';
+      background-image: url(../images/banner-info-decor-accent.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 0;
+      right: -80px;
+      width: 80px;
+      height: 151px;
+      opacity: 0;
+      transition: $tr;
+    }
+
+    
+  }
+  &__text{
+      font-weight: 200;
+      font-size: 24px;
+      line-height: 110%;
+      padding: 30px;
+      margin: 0;
+      span{
+        display: block;
+        font-weight: 700;
+        font-size: 32px;
+        margin-top: 20px;
+      }
     }
   &__decor{
-    display: block;
+    display: flex;
     content: '';
     position: relative;
+    transition: $tr;
     &._calendar{
       background-size: contain;
       background-repeat: no-repeat;
@@ -214,10 +265,9 @@ a{
       border: 1px solid $light;
       width: 50px;
       height: 50px;
-      border-radius: 10px;
+      border-radius: 10px;}
     }
   }
-}
 .banner-box{
   position: relative;
   border: 1px solid $light;
@@ -242,8 +292,8 @@ a{
   &__img{
   position: absolute;
   &._electroguitar{
-  top: -18%;
-  right: -5%;
+  top: -25%;
+  right: 0%;
   }
 }
 }
