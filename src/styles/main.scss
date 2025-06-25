@@ -7,9 +7,17 @@ body{
   font-weight: 400;
   background-color: #1F2023;
   color: $light;
+  overflow-x: hidden;
 }
 a{
   text-decoration: none;
+}
+.title-h2{
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 110%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .header{
@@ -127,7 +135,7 @@ a{
     &__btn{
   display: block;
   width: 100%;
-  margin-top: 135px;
+  margin-top: 145px;
   border-radius: 20px;
   padding: 30px;
   background-color: $accent;
@@ -160,48 +168,41 @@ a{
     box-sizing: border-box;
     transition: $tr;
     overflow: visible;
+    z-index: 1;
 
     &:hover{
-      background-color: $accent;
-      border-color: $accent;
-
-      &::after{
+      &::before{
+        width: 100%;
+        transform: scale(1);
         opacity: 1;
       }
-
       .banner__decor{
         background-color: $accent;
         border-color: $accent;
+        &::after{
+        opacity: 1;
+        transform: scale(1);
+      }
       }
     }
-
     &::before{
-      display: block;
       content: '';
-      background-image: url(../images/banner-info-decor.svg);
-      background-repeat: no-repeat;
-      background-size: contain;
-      position: absolute;
-      top: 0;
-      right: -80px;
-      width: 80px;
-      height: 151px;
-    }
-
-    &::after{
       display: block;
-      content: '';
-      background-image: url(../images/banner-info-decor-accent.svg);
-      background-repeat: no-repeat;
-      background-size: contain;
+      width: 0;
+      height: 150px;
+      background-color: $accent;
+      border: 1px solid $accent;
       position: absolute;
-      top: 0;
-      right: -80px;
-      width: 80px;
-      height: 151px;
+      top: -2px;
+      right: 0;
+      border-radius: 20px 0 0 20px;
+      z-index: -1;
       opacity: 0;
       transition: $tr;
+      transform: scale(0);
+      transform-origin: top right;
     }
+    
 
     
   }
@@ -223,6 +224,35 @@ a{
     content: '';
     position: relative;
     transition: $tr;
+    &::before{
+      display: block;
+      content: '';
+      background-image: url(../images/banner-info-decor.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: -150px;
+      right: -80px;
+      width: 80px;
+      height: 151px;
+    }
+
+    &::after{
+      display: block;
+      content: '';
+      transform: scale(0);
+      transform-origin: top left;
+      background-image: url(../images/banner-info-decor-accent.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: -150px;
+      right: -80px;
+      width: 80px;
+      height: 151px;
+      opacity: 0;
+      transition: $tr;
+    }
     &._calendar{
       background-size: contain;
       background-repeat: no-repeat;
@@ -293,8 +323,61 @@ a{
   position: absolute;
   &._electroguitar{
   top: -25%;
-  right: 0%;
+  right: -3%;
   }
 }
+}
+
+.tag{
+  display: flex;
+  gap: 64px;
+  white-space: nowrap;
+  animation: move-left 20s linear infinite;
+  &:hover{
+    animation-play-state: paused;
+  }
+  &__text{
+    border: 1px solid $light;
+    border-radius: 50px;
+    width: 100%;
+    padding: 10px 20px;
+    position: relative;
+    font-size: 24px;
+    font-weight: 100;
+    &::before{
+      content: '';
+      display: block;
+      background-color: $accent;
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      border-radius: 100%;
+      left: -40px;
+      top: calc(50% - 8px);
+    }
+  }
+}
+@keyframes move-left {
+  0% {
+    transform: translate(125%, 0);
+  }
+  100% {
+    transform: translate(-155%, 0);
+  }
+}
+.course{
+  display: flex;
+  gap: 70px;
+  &__title{
+    flex-basis: 395px;
+  }
+  &__content{
+    flex-basis: calc(100% - 395px - 70px);
+  }
+}
+.slider-teacher{
+  &__item{
+    background-color: $dark;
+  }
 }
 
