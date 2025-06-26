@@ -190,7 +190,7 @@ a{
       content: '';
       display: block;
       width: 0;
-      height: 150px;
+      height: 149px;
       background-color: $accent;
       border: 1px solid $accent;
       position: absolute;
@@ -479,7 +479,62 @@ a{
       z-index: -1;
     }
   }
-  
+}
+.accordion{
+  &__btn{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 50px;
+    border: 1px solid $accent;
+    border-radius: 20px;
+    padding: 30px;
+    color: $accent;
+    font-size: 32px;
+    cursor: pointer;
+    &:focus {
+      outline: 2px solid $accent;
+      outline-offset: 4px;
+    }
+    &::after{
+      content: '';
+      display: block;
+      width: 50px;
+      height: 50px;
+      background-image: url(../images/ui/minus.svg);
+    }
+    &.active{
+      &::after{
+        background-image: url(../images/ui/plus.svg);
+      }
+    }
+  }
+  &__panel{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  &__list{
+    list-style-type: none;
+    padding-left: 0;
+    border: 1px solid $light;
+    background-color: $light;
+    border-radius: 20px;
+  }
+  &__item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 200;
+    padding: 30px 50px;
+    color: $dark;
+    
+    &::before{
+      content: '—';
+    }
+  }
 }
 
 
