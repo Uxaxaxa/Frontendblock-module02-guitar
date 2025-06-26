@@ -368,16 +368,23 @@ a{
 .course{
   display: flex;
   gap: 70px;
+  width: 100%;
   &__title{
     flex-basis: 395px;
   }
   &__content{
     flex-basis: calc(100% - 395px - 70px);
+    width: calc(100% - 395px - 70px);
+    
   }
 }
 .slider-teacher{
   &__item{
     background-color: $dark;
   }
+  &__img{
+    width: 100%;
+  }
 }
+
 
