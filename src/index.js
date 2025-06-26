@@ -1,4 +1,4 @@
-/* import 'normalize.css' */
+import './styles/normalize.css'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
