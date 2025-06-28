@@ -100,6 +100,20 @@ a{
     }
   }
 }
+.logo{
+  &._max{
+    svg{
+      width: 400px;
+      height: 30.63px;
+    }
+  }
+  &._min{
+    svg{
+      width: 296px;
+      height: 22px;
+    }
+  }
+}
 .container{
   width: 100%;
   max-width: 1830px;
@@ -655,6 +669,7 @@ a{
     margin-bottom: 30px;
     &:last-child {
     border-bottom: none;
+    margin-bottom: 150px;
   }
     &::after{
       content: '';
@@ -683,9 +698,7 @@ a{
         background-repeat: no-repeat;
         background-size: contain;
         position: absolute;
-        left: 0;
-        right: -150px;
-        margin: 0 auto;
+        left: 769px;
         opacity: 0;
         transition: $tr;
         transform: scale(0);
@@ -700,27 +713,91 @@ a{
     }
     &._drums{
       &::before{
-        width: 568px;
-        height: 314px;
+        width: 474px;
+        height: 474px;
         background-image: url(../images/areas/drums.png);
-        top: calc(50% - 180px);
+        top: calc(50% - 237px);
       }
     }
     &._violin{
       &::before{
         width: 568px;
-        height: 314px;
+        height: 528px;
         background-image: url(../images/areas/violin.png);
-        top: calc(50% - 180px);
+        top: calc(50% - 264px);
       }
     }
     &._bas{
       &::before{
-        width: 568px;
-        height: 314px;
+        width: 586px;
+        height: 394px;
         background-image: url(../images/areas/bas.png);
-        top: calc(50% - 180px);
+        top: calc(50% - 197px);
       }
+    }
+  }
+}
+.footer{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__social{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 5px;
+}
+.social{
+  &__link{
+    display: block;
+    width: 50px fit-content;
+    max-height: 50px fit-content;
+    background-color: $light;
+    border-radius: 10px;
+    transition: $tr;
+    
+    &:hover{
+      background-color: $accent;
+      &::after{
+        background-color: $light;
+      }
+    }
+    &::after{
+      content:'';
+      display: block;
+      background-color: $accent;
+      mask: center center / 100% no-repeat;
+      -webkit-mask: center center / 100% no-repeat;
+      transition: $tr;
+    }
+      &._wa{
+        padding: 7.87px 8.37px;
+        &::after{
+          width: 28px;
+          height: 28px;
+          mask-image: url(../images/social/wa.svg);
+          -webkit-mask-image: url(../images/social/wa.svg);
+        }
+      }
+    &._vk{
+      padding: 14.06px 6.25px 10.94px 6.25px;
+      &::after{
+        width: 31.25px;
+        height: 18.75px;
+        mask-image: url(../images/social/vk.svg);
+        -webkit-mask-image: url(../images/social/vk.svg);
+        }
+    }
+    &._tg{
+      padding: 10.94px 7.81px;
+      &::after{
+        width: 25px;
+        height: 21.88px;
+        mask-image: url(../images/social/tg.svg);
+        -webkit-mask-image: url(../images/social/tg.svg);
+        }
     }
   }
 }
