@@ -742,6 +742,9 @@ a{
   grid-template-columns: repeat(2, 1fr);
   justify-content: space-between;
   align-items: center;
+  &__logo{
+    margin-bottom: 30px;
+  }
 }
 .footer__social{
   display: flex;
@@ -799,5 +802,32 @@ a{
         -webkit-mask-image: url(../images/social/tg.svg);
         }
     }
+  }
+}
+.footer-info{
+  display: flex;
+  flex-direction: column;
+  &__text{
+  font-size: 16px;
+  line-height: 150%;
+  margin: 0;
+  }
+  &__link{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 150%;
+    &:hover{
+    text-decoration: underline;
+    }
+  }
+}
+
+.footer-copy{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  &__text{
+    font-size: 16px;
+    margin-top: 20px;
   }
 }
